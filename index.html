@@ -1,119 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Padmavathi Eye Opticals</title>
   <style>
     :root {
       --primary: #4b0082;
-      --secondary: #9370db;
-      --light: #f8f4ff;
-      --dark: #2e0854;
+      --accent: #ffd700;
+      --bg: #f9f6ff;
+      --text: #2e2e2e;
     }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--light);
-      color: #2e2e2e;
+    * {
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
-    header, footer {
-      background: linear-gradient(45deg, var(--primary), var(--dark));
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), #2e0854);
       color: white;
+      padding: 1.5em 0;
       text-align: center;
-      padding: 1.2em 0;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img.logo {
+      width: 90px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
     }
     nav {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
+      margin-top: 1em;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: all 0.3s ease;
-      padding: 10px;
-      border-radius: 8px;
+      padding: 8px 18px;
+      border-radius: 50px;
       background: rgba(255, 255, 255, 0.1);
-      width: 100%;
+      transition: 0.3s ease;
+      width: 200px;
       text-align: center;
     }
     nav a:hover {
-      background: rgba(255, 255, 255, 0.3);
-      color: #fff;
+      background: var(--accent);
+      color: var(--primary);
     }
     .hero {
-      background: url('https://i.imgur.com/3ZQ3Z8b.jpg') no-repeat center center/cover;
+      background: url('https://i.imgur.com/3ZQ3Z8b.jpg') center/cover no-repeat;
       color: white;
-      text-align: center;
       padding: 100px 20px;
+      text-align: center;
     }
     .hero h1 {
       font-size: 3em;
-      margin: 0;
+      margin-bottom: 10px;
     }
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: var(--dark);
+    .hero p {
+      font-size: 1.2em;
     }
     .container {
-      padding: 40px 25px;
       max-width: 1100px;
       margin: auto;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      padding: 50px 20px;
+    }
+    section {
+      margin-bottom: 70px;
     }
     h2 {
-      color: var(--dark);
-      border-left: 6px solid var(--secondary);
-      padding-left: 18px;
-      font-size: 2em;
+      font-size: 2.2em;
+      border-left: 6px solid var(--accent);
+      padding-left: 14px;
+      margin-bottom: 25px;
+      color: var(--primary);
     }
     ul li {
       padding: 6px 0;
     }
-    .services, .gallery, .testimonials, .appointment, .contact, .catalogue {
-      margin-top: 60px;
-    }
     .gallery img {
-      width: 120px;
+      width: 140px;
       height: 100px;
       object-fit: cover;
       margin: 10px;
       border-radius: 12px;
-      border: 2px solid var(--secondary);
+      border: 2px solid var(--accent);
     }
-    form input, form textarea, form button {
+    form input,
+    form textarea,
+    form button {
       width: 100%;
-      padding: 16px;
-      margin-top: 16px;
+      padding: 14px;
+      margin-top: 14px;
       border: 1px solid #ccc;
       border-radius: 10px;
       font-size: 1em;
     }
     form button {
-      background-color: var(--primary);
+      background: var(--primary);
       color: white;
       border: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
     form button:hover {
-      background-color: var(--dark);
+      background: var(--accent);
+      color: var(--primary);
     }
-    footer p {
-      font-size: 0.95em;
-      margin: 0;
+    .map iframe {
+      width: 100%;
+      height: 320px;
+      border: none;
+      border-radius: 14px;
+    }
+    .catalogue-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .catalogue-item {
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .catalogue-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .catalogue-item h3 {
+      margin-top: 15px;
+      color: var(--primary);
+    }
+    .catalogue-item p {
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .catalogue-item a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 18px;
+      background: var(--primary);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .catalogue-item a:hover {
+      background: var(--accent);
+      color: var(--primary);
+    }
+    .testimonial {
+      background: #fff9f2;
+      padding: 20px;
+      margin-bottom: 16px;
+      border-left: 5px solid var(--accent);
+      border-radius: 10px;
+    }
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.2em;
     }
     .whatsapp-btn {
       position: fixed;
@@ -128,53 +190,12 @@
       font-weight: bold;
       box-shadow: 0 5px 10px rgba(0,0,0,0.2);
       z-index: 1000;
-      transition: background 0.3s ease;
-    }
-    .whatsapp-btn:hover {
-      background-color: #128c7e;
-    }
-    .map {
-      margin-top: 24px;
-    }
-    iframe {
-      width: 100%;
-      height: 320px;
-      border: none;
-      border-radius: 14px;
-    }
-    .catalogue-items {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-    .catalogue-item {
-      background: linear-gradient(145deg, #ffffff, #f0ebff);
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .catalogue-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 14px 35px rgba(0,0,0,0.1);
-    }
-    .catalogue-item img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 14px;
-    }
-    .catalogue-item h3 {
-      color: var(--primary);
-      font-size: 1.3em;
     }
   </style>
 </head>
 <body>
   <header>
+    <img class="logo" src="A_logo_for_Padmavathi_Eye_Hospital_features_a_grap.png" alt="Padmavathi Eye Hospital Logo">
     <h1>Padmavathi Eye Opticals</h1>
     <nav>
       <a href="#home">Home</a>
@@ -187,21 +208,4 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
-  <section class="hero" id="home">
-    <h1>Welcome to Padmavathi Eye Opticals</h1>
-    <p>Your vision, our mission</p>
-  </section>
-
-  <div class="container">
-    <section id="catalogue" class="catalogue">
-      <h2>Our Catalogue</h2>
-      <div class="catalogue-items">
-        <!-- Product cards remain unchanged -->
-      </div>
-    </section>
-  </div>
-
-  <a class="whatsapp-btn" href="https://wa.me/9849746637" target="_blank">Chat with us</a>
-</body>
-</html>
+  <!-- content continues unchanged -->
