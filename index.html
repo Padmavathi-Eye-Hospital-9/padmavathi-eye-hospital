@@ -15,7 +15,7 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
-    body {
+    html, body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
@@ -217,9 +217,53 @@
       box-shadow: 0 5px 10px rgba(0,0,0,0.2);
       z-index: 1000;
     }
+    section:target {
+      animation: fadeIn 1s ease forwards;
+    }
   </style>
 </head>
 <body>
-<!-- content unchanged -->
+  <header>
+    <img class="logo" src="logo.png" alt="Padmavathi Eye Hospital Logo" />
+    <h1>Padmavathi Eye Hospital</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section id="home" class="hero">
+    <h2>Welcome to Padmavathi Eye Hospital</h2>
+    <p>We care for your vision with trust and technology</p>
+  </section>
+  <div class="container">
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Eye Checkups</li>
+        <li>Optical Frames & Lenses</li>
+        <li>Contact Lenses</li>
+        <li>Surgical Referrals</li>
+      </ul>
+    </section>
+    <!-- Other sections here -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Your message" rows="5"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.207540688802!2d78.4825108!3d17.447236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b731b404e21%3A0xabcd!2sPadmavathi%20Eye%20Hospital!5e0!3m2!1sen!2sin!4v1710780800000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </div>
+  <footer>
+    &copy; 2025 Padmavathi Eye Hospital. All rights reserved.
+  </footer>
 </body>
 </html>
