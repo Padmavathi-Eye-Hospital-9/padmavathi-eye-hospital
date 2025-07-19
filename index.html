@@ -28,21 +28,23 @@
     }
     nav {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
       transition: all 0.3s ease;
-      padding: 8px 12px;
-      border-radius: 10px;
-      background: transparent;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      text-align: center;
     }
     nav a:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.3);
       color: #fff;
     }
     .hero {
@@ -142,11 +144,10 @@
     }
     .catalogue-items {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 25px;
     }
     .catalogue-item {
-      flex: 1 1 calc(33.333% - 20px);
       background: linear-gradient(145deg, #ffffff, #f0ebff);
       border: 1px solid #ddd;
       padding: 20px;
@@ -169,29 +170,6 @@
     .catalogue-item h3 {
       color: var(--primary);
       font-size: 1.3em;
-    }
-
-    /* Mobile Responsive Styling */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-      .catalogue-items {
-        flex-direction: column;
-      }
-      .catalogue-item {
-        flex: 1 1 100%;
-      }
-      header, footer {
-        padding: 1em 0;
-      }
-      h2 {
-        font-size: 1.6em;
-      }
     }
   </style>
 </head>
