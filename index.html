@@ -6,24 +6,23 @@
   <title>Padmavathi Eye Hospital</title>
   <style>
     :root {
-      --primary: #6cb7c6;
-      --accent: #d3f4ff;
-      --bg: #f9feff;
-      --text: #1f1f1f;
+      --primary: #00acc1;        /* Soft blue-green */
+      --accent: #81c784;         /* Mint green */
+      --bg: #e6f7ff;             /* Light blue background */
+      --text: #333333;           /* Neutral dark text */
     }
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
-    html, body {
+    body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-      overflow-x: hidden;
     }
     header {
-      background: linear-gradient(135deg, var(--primary), #91d1db);
+      background: linear-gradient(135deg, var(--primary), #007c91);
       color: white;
       padding: 1.5em 0;
       text-align: center;
@@ -44,7 +43,6 @@
       align-items: center;
       gap: 10px;
       margin-top: 1em;
-      animation: fadeIn 1.5s ease-in-out;
     }
     nav a {
       color: white;
@@ -66,33 +64,18 @@
       color: white;
       padding: 100px 20px;
       text-align: center;
-      animation: fadeIn 2s ease-in-out;
     }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
     }
     .container {
       max-width: 1100px;
       margin: auto;
       padding: 50px 20px;
-      animation: fadeSlideUp 1.2s ease-in-out;
-    }
-    @keyframes fadeSlideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
     section {
       margin-bottom: 70px;
@@ -114,10 +97,6 @@
       margin: 10px;
       border-radius: 12px;
       border: 2px solid var(--accent);
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
     }
     form input,
     form textarea,
@@ -133,7 +112,11 @@
       background: var(--primary);
       color: white;
       border: none;
-      transition: 0.3s;
+      border-radius: 30px;
+      padding: 12px 24px;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     form button:hover {
       background: var(--accent);
@@ -156,10 +139,6 @@
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
       padding: 20px;
       text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .catalogue-item:hover {
-      transform: translateY(-8px);
     }
     .catalogue-item img {
       width: 100%;
@@ -178,24 +157,25 @@
     .catalogue-item a {
       display: inline-block;
       margin-top: 10px;
-      padding: 8px 18px;
+      padding: 12px 24px;
       background: var(--primary);
       color: white;
       border-radius: 30px;
       text-decoration: none;
-      transition: 0.3s;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .catalogue-item a:hover {
       background: var(--accent);
       color: var(--primary);
     }
     .testimonial {
-      background: #f0fbfc;
+      background: #fff9f2;
       padding: 20px;
       margin-bottom: 16px;
       border-left: 5px solid var(--accent);
       border-radius: 10px;
-      animation: fadeIn 1s ease-in-out;
     }
     footer {
       background: var(--primary);
@@ -217,51 +197,103 @@
       box-shadow: 0 5px 10px rgba(0,0,0,0.2);
       z-index: 1000;
     }
-    section:target {
-      animation: fadeIn 1s ease forwards;
-    }
   </style>
 </head>
 <body>
   <header>
-    <img class="logo" src="logo.png" alt="Padmavathi Eye Hospital Logo" />
+    <img class="logo" src="A_logo_for_Padmavathi_Eye_Hospital_features_a_grap.png" alt="Padmavathi Eye Hospital Logo">
     <h1>Padmavathi Eye Hospital</h1>
     <nav>
       <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#catalogue">Catalogue</a>
+      <a href="#gallery">Gallery</a>
       <a href="#testimonials">Testimonials</a>
+      <a href="#appointment">Appointment</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
-  <section id="home" class="hero">
+
+  <section id="home" class="container">
     <h2>Welcome to Padmavathi Eye Hospital</h2>
-    <p>We care for your vision with trust and technology</p>
+    <p>We offer top-quality eye care with advanced equipment and expert doctors.</p>
   </section>
-  <div class="container">
-    <section id="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Eye Checkups</li>
-        <li>Optical Frames & Lenses</li>
-        <li>Contact Lenses</li>
-        <li>Surgical Referrals</li>
-      </ul>
-    </section>
-    <!-- Other sections here -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form>
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Your message" rows="5"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.207540688802!2d78.4825108!3d17.447236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b731b404e21%3A0xabcd!2sPadmavathi%20Eye%20Hospital!5e0!3m2!1sen!2sin!4v1710780800000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <section id="about" class="container">
+    <h2>About Us</h2>
+    <p>Padmavathi Eye Hospital is committed to providing comprehensive and affordable eye care.</p>
+  </section>
+
+  <section id="services" class="container">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Eye Checkups</li>
+      <li>Prescription Glasses</li>
+      <li>Computerized Eye Testing</li>
+      <li>Contact Lens Services</li>
+    </ul>
+  </section>
+
+  <section id="catalogue" class="container">
+    <h2>Catalogue</h2>
+    <div class="catalogue-items">
+      <div class="catalogue-item">
+        <img src="https://i.imgur.com/oEyQc2W.jpg" alt="Spectacle 1">
+        <h3>Modern Spectacles</h3>
+        <p>₹999</p>
+        <a href="#">Enquire</a>
       </div>
-    </section>
-  </div>
+      <div class="catalogue-item">
+        <img src="https://i.imgur.com/1VoYZxD.jpg" alt="Spectacle 2">
+        <h3>Classic Frames</h3>
+        <p>₹799</p>
+        <a href="#">Enquire</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="container">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://i.imgur.com/TWxJYlH.jpg" alt="Clinic">
+      <img src="https://i.imgur.com/wRMkYsr.jpg" alt="Glasses Display">
+    </div>
+  </section>
+
+  <section id="testimonials" class="container">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+      “Great service! Highly recommend for any eye issues.” – Ramesh K.
+    </div>
+    <div class="testimonial">
+      “They helped me choose perfect glasses. Very friendly staff.” – Sneha T.
+    </div>
+  </section>
+
+  <section id="appointment" class="container">
+    <h2>Book an Appointment</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <textarea name="message" placeholder="Your message..." rows="4"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Our Location</h2>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.6840739344354!2d79.5193902748062!3d17.38479868321512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a34a8cd1bb5e2f5%3A0xf25df9d8a29dbec2!2sThonda%20Thirumalagiri%2C%20Telangana%20508223!5e0!3m2!1sen!2sin!4v1721392264662!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+
   <footer>
     &copy; 2025 Padmavathi Eye Hospital. All rights reserved.
   </footer>
